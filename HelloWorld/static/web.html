@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Six-Degree</title>
+      <!-- 加载jquery库，必须在bootstrap.js之前 -->
+  	<script src="./js/jquery-3.2.1.min.js" type="text/javascript"></script> <script type="text/javascript"></script>
+  	<!-- 加载bootstrap的js库 -->
+  	<script src="./bootstrapdist/js/bootstrap.min.js"  type="text/javascript"></script>
+  	<!-- 加载剥离的js代码 -->
+  	<!--   <script type="text/javascript" src = "./scs.js"></script> -->
+  	<script src="./js/echarts.js" type="text/javascript"></script>
+  	<script type="text/javascript" src = "./begin.js"></script>
+  	<script type="text/javascript" src = "./twitter/bigtwitter.js"></script>
+  	<link rel="stylesheet" type="text/css" href="./bootstrapdist/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="css/style.css">
+  	<link rel="stylesheet" type="text/css" href="css/autosearch.css">
+	</head>
+	<body onload = "bbegin()"><!--页面完全载入后，在页面对象上触发-->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> 
+    	<div class="container-fluid"> 
+    	<div class="navbar-header">
+        <a href="./web.html" class="navbar-brand"  style="font-size:20px;"><B>Six-Degree Explorer</B> </a>
+		<a href="./web.html" class="navbar-brand"  class="btn btn-default" style="font-size:20px;margin-left: 900px;">Twitter </a>
+		<a href="./sweb.html" class="navbar-brand" href="./sweb.html" style="font-size:20px;">egonets-Twitter </a>
+   	  </div> 
+    </div>
+    </div>
+</nav>
+<div id = "center-area">
+	<div id ="bigforce" style="position:absolute;height:120%;width:50%;left:0%;border:0px;"> </div>	
+    <div id = "list">
+		<form class="navbar-form navbar-left" role="search" name="bform">
+			<h3 style ="margin-left:20px;margin-top:50px;width:50%;left:0%;">The Shortest Path:</h3>
+			{% csrf_token %}
+			<input type="text" name ="snode" class="form-control" placeholder="source node" style ="margin-left:20px;font-size: 20px;height: 40px;">
+			<input type="text" name ="dnode" class="form-control" placeholder="destination node" style ="margin-left:20px;font-size: 20px;height: 40px;">			
+			<div  class="form-group">
+				<button type="button" class="btn btn-default" onclick="bigsearch()" style="margin-left:20px;font-size:20px;height: 40px; ">Explore</button>				
+			</div>
+			<div>
+				<font id="showNopath" color="red" size="4" style=" margin-left:20px;margin-top:2px; "></font>
+			</div>
+      	</form>
+      	<div id="bigpath" >  </div>
+
+      	<div id="bigline">  </div>
+		<div id="smallinfo">
+			<h4 style ="padding-left:0px;">Node:81,306</h4>
+			<h4 style ="padding-left:0px;">Edges:1,768,149</h4>
+			<h4 style ="padding-left:0px;">>>>Sample:</h4>
+			<h4 style ="padding-left:0px;">Pairs:2000*2000</h4>
+			<h4 style ="padding-left:0px;">With Path:745,064</h4>
+			<h4 style ="padding-left:0px;">Without path:3,254,936</h4>
+			<h4 style ="padding-left:0px;">Average Length of shortest paths :2.99</h4>
+		</div>
+
+    </div>  
+    
+</div>
+</body>
+</html>

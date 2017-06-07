@@ -1,0 +1,234 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+html, body {
+    color: #808080;
+    font-family: Microsoft YaHei, '微软雅黑', Arial, '宋体', Tahoma, Helvetica, sans-serif;
+    font-size: 1vh;
+    background: #FFFFFF;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/*@jim for forcechart and cloudchart*/
+.navbar {
+    /*background: -webkit-linear-gradient(#1D3649, #152935); 
+    background: -o-linear-gradient(#1D3649, #152935); 
+    background: -moz-linear-gradient(#1D3649, #152935); 
+    background: linear-gradient(#1D3649, #152935);*/
+    background-color: rgba(0,0,0,0.5); 
+    border-bottom: 1px solid #3C3C3C;
+}
+#center-area{
+    position: absolute;
+    height: 95%;
+    width: 100%;
+}
+#bigforce{
+    position: absolute;
+    width: 50%;
+    height: 120%;
+    left:0%;
+    background-color: #000000;
+}
+#list{
+    position: absolute;
+    width: 50%;
+    height:120%;
+    left: 50%;
+    background-color: #000000; 
+    padding:0;
+    margin:0;
+    /*border-right: 1px solid #FFFFFF;*/
+    color:#fff;
+    letter-spacing:1px;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    }
+#smallforce{
+    position: absolute;
+    width: 50%;
+    height: 120%;
+    left:0%;
+    background-color: #000000; 
+}
+
+.axis path,  .axis line{  
+        fill:none;  
+        stroke:black;  
+        shape-rendering:crispEdges;  
+}  
+#bigline{
+    position: absolute;
+    width: 50%;
+    height: 45%;
+    left: 0%;
+    top:50%;
+    padding-bottom: 5%;
+}
+#biginfo{
+	position: absolute;
+    width: 50%;
+    height: 45%;
+    left: 50%;
+    top:55%;
+}
+/*对悬浮框的样式设计*/
+#tooltip {
+        position :absolute;
+        width: 300px;
+        height: 20px;
+        font-size: 10px;
+        color:#E0E0E0;
+        fill:gray;
+        text-align: left;
+        border-style: none;
+        border-width: 1px;
+        background-color: none;
+        opacity:0.0;
+}
+/*--------------------- @jim for about the bottom ,time bar*/
+#bigpath{
+    position: absolute;
+    width: 100%;
+    height: 38%;
+    left: 0%;
+    top:18%;
+/*    margin-top:150px ;*/
+}
+#smallpath{
+    position: absolute;
+    width: 100%;
+    height: 36%;
+    left: 0%;
+    top:20%;
+}
+#smallline{
+    position: absolute;
+    width: 50%;
+    height: 45%;
+    left: 0%;
+    top:50%;
+    padding-bottom: 5%;
+}
+#smallinfo{
+    position: absolute;
+    width: 50%;
+    height: 45%;
+    left: 50%;
+    top:55%;
+	/*
+    background: -webkit-radial-gradient(#325C80, #264A60); 
+    background: -o-radial-gradient(#325C80, #264A60); 
+    background: -moz-radial-gradient(#325C80, #264A60); 
+    background: radial-gradient(#325C80, #264A60);*/
+}
+
+#undirectforce{
+    position: absolute;
+    width: 50%;
+    height: 120%;
+    left:0%;
+    background-color: #000000;
+}
+#undirectpath{
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    left: 0%;
+    margin-top:160px ;
+}
+#undirectline{
+    position: absolute;
+    width: 50%;
+    height: 45%;
+    left: 0%;
+    top:45%;    
+    padding-bottom: 20px
+}
+#undirectinfo{
+    position: absolute;
+    width: 50%;
+    height: 65%;
+    left: 50%;
+    top:50%;
+    /*
+    background: -webkit-radial-gradient(#325C80, #264A60); 
+    background: -o-radial-gradient(#325C80, #264A60); 
+    background: -moz-radial-gradient(#325C80, #264A60); 
+    background: radial-gradient(#325C80, #264A60);*/
+}
+/*--------------@yangxin for center table--------------*/
+.zebra caption{
+    font-size:20px;
+    font-weight:normal;
+    background-repeat:no-repeat;
+    background-position: 130px center;
+    padding-top: 20px;
+    height:50px;}
+
+#path{
+    padding-top:35%;
+    width:85%;
+    margin:0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    vertical-align: middle;
+    width:60%;
+    -webkit-box-shadow:  0px 2px 1px 5px rgba(242, 242, 242, 0.1);
+    box-shadow:  0px 2px 1px 5px rgba(242, 242, 242, 0.1);
+}
+
+.zebra {
+    border: 1px solid #555;
+}
+
+.zebra td {
+    border-left: 1px solid #555;
+    border-top: 1px solid #555;
+    padding: 1px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60px;  
+  
+}
+
+.zebra th, .zebra th:hover {
+    border-left: 1px solid #555;
+    border-bottom: 1px solid #828282;
+    padding: 5px;  
+    background-color:#151515 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#151515), to(#404040)) !important;
+    background-image: -webkit-linear-gradient(top, #151515, #404040) !important;
+    background-image:    -moz-linear-gradient(top, #151515, #404040) !important;
+    background-image:     -ms-linear-gradient(top, #151515, #404040) !important;
+    background-image:      -o-linear-gradient(top, #151515, #404040) !important;
+    background-image:         linear-gradient(top, #151515, #404040) !important;
+    color:#fff !important;
+    font-weight:normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 40px;
+}
+
+.zebra tbody tr:nth-child(even) {
+    background: #000 !important;
+    color:#fff;
+}
+
+.zebra tr:hover *{
+    background: #eeeeee;
+    color:#000;
+}
+
+.zebra tr {
+    background:#404040;
+    color:#fff;
+}

@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta charset="utf8">
+<script src="./js/echarts.js" type="text/javascript"></script>
+<script src="./js/jquery-3.2.1.min.js" type="text/javascript"></script> <script type="text/javascript">
+	function draw(){ 
+		var text= $.getJSON("./bigedges.json",function(data){
+			console.log("total data",data)
+			var graph = data2Graph(data); 
+			drawGraph(graph); 
+         });	
+	} 
+	
+	function data2Graph(data) { 
+		var graph = {} ;
+		var vertices = {} ;
+		var links = []; 
+		for (var i = 0; i < data.length; i++) { 
+			var s = String(data[i][0]); 
+			var t = String(data[i][1]); 
+			var v = data[i][2]; 
+			vertices[s] = s; 
+			vertices[t] = t; 
+			links.push({'source' : s, 'target' : t, 'value' : v}); 
+		} 
+		var nodes = []; 
+		$.each(vertices, function(k, v) { 
+			nodes.push({'name' : v, 'value' : v}); 
+		}); 
+		graph['links'] = links; 
+		graph['data'] = nodes; 
+		return graph; 
+	} 
+	
+	function drawGraph(graph) {
+		var myChart = echarts.init(document.getElementById("echarts-main")); 
+		var option = { 
+			tooltip: {}, 
+			series : [ 
+				{ 
+					type: 'graph', 
+					layout: 'force', 
+					symbolSize: 30, 
+					edgeSymbol: ['none', 'arrow'], 
+					data: graph.data, 
+					links: graph.links, 
+					roam: true, 
+					label: { 
+						normal: { 
+							show: true, 
+							formatter: function (e) { 
+								return e['data']['value']; 
+							} 
+						} 
+					}, 
+					edgeLabel: { 
+						normal: { 
+							show: true, 
+							position: 'middle' 
+						} 
+					}, 
+					force: { 
+						repulsion: 1000, 
+						edgeLength: 200 
+					} 
+				} 
+			] 
+		}; 
+		myChart.setOption(option); 
+	} 
+	
+	$(document).ready(function(){ 
+		draw(); 
+	}); 
+</script>
+<title></title>
+</head>
+<body>
+    <div id="echarts-main" style="height:320px;width:500px;border:1px dashed;"></div>
+</body>
+</html>
